@@ -16,6 +16,7 @@
 		EA5E363728B926A400F2D007 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E363628B926A400F2D007 /* UiView+Extension.swift */; };
 		EA5E363928B9278300F2D007 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E363828B9278300F2D007 /* OnboardingSlide.swift */; };
 		EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */; };
+		EA72108F28B957ED008899FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72108E28B957ED008899FE /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EA5E363628B926A400F2D007 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
 		EA5E363828B9278300F2D007 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA72108E28B957ED008899FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		EA5E362F28B9242000F2D007 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA72108D28B957CD008899FE /* Home */,
 				EA5E363228B9243A00F2D007 /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +117,14 @@
 				EA5E363628B926A400F2D007 /* UiView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA72108D28B957CD008899FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EA72108E28B957ED008899FE /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				EA2ABEDB28B835DF0077BB2A /* SceneDelegate.swift in Sources */,
 				EA5E363728B926A400F2D007 /* UiView+Extension.swift in Sources */,
 				EA5E363428B9245D00F2D007 /* OnboardingViewController.swift in Sources */,
+				EA72108F28B957ED008899FE /* HomeViewController.swift in Sources */,
 				EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
