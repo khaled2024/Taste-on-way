@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		EA2ABED928B835DF0077BB2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2ABED828B835DF0077BB2A /* AppDelegate.swift */; };
 		EA2ABEDB28B835DF0077BB2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2ABEDA28B835DF0077BB2A /* SceneDelegate.swift */; };
-		EA2ABEDD28B835DF0077BB2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2ABEDC28B835DF0077BB2A /* ViewController.swift */; };
 		EA2ABEE028B835DF0077BB2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2ABEDE28B835DF0077BB2A /* Main.storyboard */; };
 		EA2ABEE228B835E20077BB2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2ABEE128B835E20077BB2A /* Assets.xcassets */; };
 		EA2ABEE528B835E20077BB2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2ABEE328B835E20077BB2A /* LaunchScreen.storyboard */; };
+		EA5E363428B9245D00F2D007 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E363328B9245D00F2D007 /* OnboardingViewController.swift */; };
+		EA5E363728B926A400F2D007 /* UiView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E363628B926A400F2D007 /* UiView+Extension.swift */; };
+		EA5E363928B9278300F2D007 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E363828B9278300F2D007 /* OnboardingSlide.swift */; };
+		EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA2ABED528B835DF0077BB2A /* Taste on way.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taste on way.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2ABED828B835DF0077BB2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA2ABEDA28B835DF0077BB2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA2ABEDC28B835DF0077BB2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA2ABEDF28B835DF0077BB2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA2ABEE128B835E20077BB2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA2ABEE428B835E20077BB2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA2ABEE628B835E20077BB2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA5E363328B9245D00F2D007 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		EA5E363628B926A400F2D007 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
+		EA5E363828B9278300F2D007 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		EA2ABED728B835DF0077BB2A /* Taste on way */ = {
 			isa = PBXGroup;
 			children = (
+				EA5E363528B9267700F2D007 /* Extensions */,
+				EA5E363128B9242C00F2D007 /* CustomViews */,
+				EA5E363028B9242700F2D007 /* Models */,
+				EA5E362F28B9242000F2D007 /* Views */,
 				EA2ABED828B835DF0077BB2A /* AppDelegate.swift */,
 				EA2ABEDA28B835DF0077BB2A /* SceneDelegate.swift */,
-				EA2ABEDC28B835DF0077BB2A /* ViewController.swift */,
 				EA2ABEDE28B835DF0077BB2A /* Main.storyboard */,
 				EA2ABEE128B835E20077BB2A /* Assets.xcassets */,
 				EA2ABEE328B835E20077BB2A /* LaunchScreen.storyboard */,
 				EA2ABEE628B835E20077BB2A /* Info.plist */,
 			);
 			path = "Taste on way";
+			sourceTree = "<group>";
+		};
+		EA5E362F28B9242000F2D007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E363228B9243A00F2D007 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA5E363028B9242700F2D007 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E363828B9278300F2D007 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA5E363128B9242C00F2D007 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		EA5E363228B9243A00F2D007 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E363328B9245D00F2D007 /* OnboardingViewController.swift */,
+				EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EA5E363528B9267700F2D007 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E363628B926A400F2D007 /* UiView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2ABEDD28B835DF0077BB2A /* ViewController.swift in Sources */,
+				EA5E363928B9278300F2D007 /* OnboardingSlide.swift in Sources */,
 				EA2ABED928B835DF0077BB2A /* AppDelegate.swift in Sources */,
 				EA2ABEDB28B835DF0077BB2A /* SceneDelegate.swift in Sources */,
+				EA5E363728B926A400F2D007 /* UiView+Extension.swift in Sources */,
+				EA5E363428B9245D00F2D007 /* OnboardingViewController.swift in Sources */,
+				EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Taste on way/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YumYum;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,6 +369,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Taste on way/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YumYum;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
