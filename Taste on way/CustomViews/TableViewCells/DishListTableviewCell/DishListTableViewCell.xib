@@ -56,6 +56,7 @@
                             <constraint firstItem="tWh-4c-sRP" firstAttribute="leading" secondItem="ga8-ct-55P" secondAttribute="leading" constant="16" id="Hqq-9r-1bP"/>
                             <constraint firstAttribute="trailing" secondItem="tFz-L3-1pA" secondAttribute="trailing" constant="16" id="VUR-Ra-J9h"/>
                             <constraint firstItem="tFz-L3-1pA" firstAttribute="top" secondItem="tWh-4c-sRP" secondAttribute="top" id="m7F-Uv-Uyo"/>
+                            <constraint firstAttribute="height" constant="82" id="vAp-pw-WJs"/>
                             <constraint firstItem="tFz-L3-1pA" firstAttribute="leading" secondItem="tWh-4c-sRP" secondAttribute="trailing" constant="16" id="vHP-9E-IjC"/>
                             <constraint firstItem="tWh-4c-sRP" firstAttribute="centerY" secondItem="ga8-ct-55P" secondAttribute="centerY" id="vnK-vl-OpP"/>
                         </constraints>

@@ -26,6 +26,8 @@
 		EA64085328BE600900FE16AD /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64085128BE600900FE16AD /* DishListTableViewCell.swift */; };
 		EA64085428BE600900FE16AD /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA64085228BE600900FE16AD /* DishListTableViewCell.xib */; };
 		EA64085628BE621E00FE16AD /* DishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64085528BE621E00FE16AD /* DishListViewController.swift */; };
+		EA64085A28BE71F400FE16AD /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64085928BE71F400FE16AD /* ListOrdersViewController.swift */; };
+		EA64085C28BE735C00FE16AD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64085B28BE735C00FE16AD /* Order.swift */; };
 		EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */; };
 		EA72108F28B957ED008899FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72108E28B957ED008899FE /* HomeViewController.swift */; };
 		EA9995FF28BD8A0F00916FAB /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9995FD28BD8A0F00916FAB /* CategoryCollectionViewCell.swift */; };
@@ -59,6 +61,8 @@
 		EA64085128BE600900FE16AD /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		EA64085228BE600900FE16AD /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		EA64085528BE621E00FE16AD /* DishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListViewController.swift; sourceTree = "<group>"; };
+		EA64085928BE71F400FE16AD /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
+		EA64085B28BE735C00FE16AD /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		EA72108B28B92E05008899FE /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA72108E28B957ED008899FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9995FD28BD8A0F00916FAB /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				EA72108D28B957CD008899FE /* Home */,
 				EA64084628BE54D400FE16AD /* DishDetail */,
 				EA64085728BE62DA00FE16AD /* ListDishes */,
+				EA64085828BE71E100FE16AD /* ListOrders */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				EA5E363828B9278300F2D007 /* OnboardingSlide.swift */,
 				EA99960128BD8B7800916FAB /* DishCategory.swift */,
 				EA64083F28BE391E00FE16AD /* Dish.swift */,
+				EA64085B28BE735C00FE16AD /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +229,14 @@
 				EA64085528BE621E00FE16AD /* DishListViewController.swift */,
 			);
 			path = ListDishes;
+			sourceTree = "<group>";
+		};
+		EA64085828BE71E100FE16AD /* ListOrders */ = {
+			isa = PBXGroup;
+			children = (
+				EA64085928BE71F400FE16AD /* ListOrdersViewController.swift */,
+			);
+			path = ListOrders;
 			sourceTree = "<group>";
 		};
 		EA72108D28B957CD008899FE /* Home */ = {
@@ -388,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA64085328BE600900FE16AD /* DishListTableViewCell.swift in Sources */,
+				EA64085A28BE71F400FE16AD /* ListOrdersViewController.swift in Sources */,
+				EA64085C28BE735C00FE16AD /* Order.swift in Sources */,
 				EA64084A28BE559F00FE16AD /* UiViewController+Extension.swift in Sources */,
 				EA64085628BE621E00FE16AD /* DishListViewController.swift in Sources */,
 				EA9995FF28BD8A0F00916FAB /* CategoryCollectionViewCell.swift in Sources */,

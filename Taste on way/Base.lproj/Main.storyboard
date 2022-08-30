@@ -323,8 +323,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yum Yum" id="yBL-ta-8YI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LQu-XO-ngG"/>
                         <barButtonItem key="rightBarButtonItem" image="cart.circle.fill" catalog="system" id="3R8-t7-398">
                             <color key="tintColor" red="0.91764706370000004" green="0.31372550129999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="ordersButtonTapped:" destination="jio-iT-KqQ" id="XSq-49-NET"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -472,6 +476,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebL-RH-FQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3369.5652173913045" y="20.758928571428569"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="jvL-cA-IOa">
+            <objects>
+                <viewController storyboardIdentifier="ListOrdersViewController" id="RgC-79-vRt" customClass="ListOrdersViewController" customModule="Taste_on_way" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="99u-T5-frW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-hd-ayU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RgC-79-vRt" id="pVX-Qm-FvW"/>
+                                    <outlet property="delegate" destination="RgC-79-vRt" id="n0b-wA-2Hv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nDT-RW-qHf"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NWd-hd-ayU" firstAttribute="trailing" secondItem="nDT-RW-qHf" secondAttribute="trailing" id="K8F-M9-k3k"/>
+                            <constraint firstItem="NWd-hd-ayU" firstAttribute="leading" secondItem="nDT-RW-qHf" secondAttribute="leading" id="kVU-fa-93W"/>
+                            <constraint firstItem="NWd-hd-ayU" firstAttribute="top" secondItem="nDT-RW-qHf" secondAttribute="top" id="seN-qz-BBE"/>
+                            <constraint firstItem="nDT-RW-qHf" firstAttribute="bottom" secondItem="NWd-hd-ayU" secondAttribute="bottom" id="xV4-pv-fM6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Orders" id="g0b-wb-KPX"/>
+                    <connections>
+                        <outlet property="listOrdertableView" destination="NWd-hd-ayU" id="hCX-pp-Ojf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbs-6b-DEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834.7826086956522" y="770.75892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="naN-1g-MFC">

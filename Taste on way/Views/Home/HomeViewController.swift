@@ -50,8 +50,10 @@ class HomeViewController: UIViewController {
     
     //MARK: - actions
     
-    
-    
+    @IBAction func ordersButtonTapped(_ sender: UIBarButtonItem) {
+        let controller = ListOrdersViewController.instantiate()
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
 }
 //MARK: - extensions

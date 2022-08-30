@@ -19,5 +19,10 @@ class DishListTableViewCell: UITableViewCell {
         self.dishImage.kf.setImage(with: dish.image?.asURL)
         self.dishNamelable.text = dish.name
     }
+    func setUp(order: Order){
+        self.dishDescriptionLable.text = order.dish?.description
+        self.dishImage.kf.setImage(with: order.dish?.image?.asURL)
+        self.dishNamelable.text = order.name
+    }
     
 }
