@@ -6,21 +6,27 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class DishListViewController: UIViewController {
     
     @IBOutlet weak var dishListTableView: UITableView!
     var category: DishCategory!
-    var dishes: [Dish] = [
-        Dish(id: "id1", name: "khaled", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: "this is populer dish in africa", calories: 30),
-        Dish(id: "id2", name: "hussien", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: "this is populer dish in africa this is populer dish in africa this is populer dish in africa this is populer dish in africa", calories: 40),
-        Dish(id: "id3", name: "khalifa", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: " this is populer dish in africa", calories: 12)
-        
-    ]
+    var dishes: [Dish] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         title = category.name
         registerCell()
+        ProgressHUD.show()
+        NetworkService.shared.fetchCategoryDishes(categoryID: category.id ?? "") {[weak self] result in
+            switch result {
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                self?.dishes = dishes
+                self?.dishListTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .systemRed

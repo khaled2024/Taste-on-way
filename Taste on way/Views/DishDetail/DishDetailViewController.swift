@@ -24,7 +24,7 @@ class DishDetailViewController: UIViewController {
         setUp()
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.tintColor = .systemRed
+        navigationController?.navigationBar.tintColor = .black
     }
     func setUp(){
         dishDescriptionLable.text = dish.description

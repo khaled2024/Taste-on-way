@@ -112,4 +112,12 @@ struct NetworkService {
         ]
         request(route:.placeOrder(dishID) , method: .post, parameters: params, completion: completion)
     }
+    //MARK: - fetch Category Dishes
+    func fetchCategoryDishes(categoryID: String , completion: @escaping (Result<[Dish] , Error>)-> Void){
+        request(route: .fetchCategoryDishes(categoryID), method: .get, completion: completion)
+    }
+    //MARK: - place order
+    func fetchPlaceOrders(completion: @escaping (Result<[Order] , Error>)-> Void){
+        request(route: .fetchOrders, method: .get, completion: completion)
+    }
 }

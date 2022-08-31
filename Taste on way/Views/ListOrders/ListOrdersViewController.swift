@@ -6,19 +6,28 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class ListOrdersViewController: UIViewController {
     
     @IBOutlet weak var listOrdertableView: UITableView!
-    var orders : [Order] = [
-        Order(name: "khaled hussien", dish: Dish(id: "id1", name: "khaled", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa ", calories: 30), id: "id1"),
-        Order(name: "khaled hussien", dish: Dish(id: "id1", name: "khaled", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa this is populer dish in africa ", calories: 60), id: "id1"),
-        Order(name: "khaled hussien", dish: Dish(id: "id1", name: "khaled", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa ", calories: 10), id: "id1")
-    ]
+    var orders : [Order] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Orders"
         registerCells()
+        ProgressHUD.show()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkService.shared.fetchPlaceOrders { [weak self] result in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.orders = orders
+                self?.listOrdertableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .black
