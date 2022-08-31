@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Dish {
+struct Dish: Codable {
     let id,name,image,description : String?
     let calories: Int?
     

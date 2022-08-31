@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import ProgressHUD
 class DishDetailViewController: UIViewController {
     
     @IBOutlet weak var placeOrderButton: UIButton!
@@ -23,7 +24,7 @@ class DishDetailViewController: UIViewController {
         setUp()
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .systemRed
     }
     func setUp(){
         dishDescriptionLable.text = dish.description
@@ -33,6 +34,19 @@ class DishDetailViewController: UIViewController {
     }
     
     @IBAction func placeOrderTapped(_ sender: UIButton) {
+        guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces) , !name.isEmpty else{
+            ProgressHUD.showError("Please enter your name")
+            return
+        }
+        ProgressHUD.show("placing order...")
+        NetworkService.shared.placeOrder(dishID: dish.id ?? "", name: name) { result in
+            switch result{
+            case .success(_):
+                ProgressHUD.showSuccess("your order has been received👨‍🍳", image: .checkmark, interaction: true)
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     

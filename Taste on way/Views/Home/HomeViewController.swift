@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class HomeViewController: UIViewController {
     
     //MARK: - variables
@@ -15,29 +15,30 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
-    var categories: [DishCategory] = [
-        DishCategory(id: "1", name: "Africa dishs1", image: "https://thedreamafrica.com/wp-content/uploads/2019/07/Ugali-dish.jpg"),
-        DishCategory(id: "2", name: "Africa dishs2", image: "https://thedreamafrica.com/wp-content/uploads/2019/07/Ugali-dish.jpg"),
-        DishCategory(id: "3", name: "Africa dishs3", image: "https://thedreamafrica.com/wp-content/uploads/2019/07/Ugali-dish.jpg"),
-        DishCategory(id: "4", name: "Africa dishs4", image: "https://thedreamafrica.com/wp-content/uploads/2019/07/Ugali-dish.jpg"),
-        DishCategory(id: "5", name: "Africa dishs5", image: "https://thedreamafrica.com/wp-content/uploads/2019/07/Ugali-dish.jpg")
-    ]
-    var populers: [Dish] = [
-        Dish(id: "id1", name: "khaled", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: "this is populer dish in africa", calories: 30),
-        Dish(id: "id2", name: "hussien", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: "this is populer dish in africa this is populer dish in africa this is populer dish in africa this is populer dish in africa", calories: 40),
-        Dish(id: "id3", name: "khalifa", image: "https://img.delicious.com.au/sMGJMdx_/w759-h506-cfill/del/2016/05/harira-moroccan-lamb-tomato-and-lentil-soup-29860-3.jpg", description: " this is populer dish in africa", calories: 12)
-    ]
-    var specials: [Dish] = [
-        Dish(id: "id1", name: "khaled", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa this is populer dish in africa ", calories: 30),
-        Dish(id: "id2", name: "hussien", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa", calories: 40),
-        Dish(id: "id3", name: "khalifa", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa", calories: 12)
-    ]
+    var categories: [DishCategory] = []
+    var populers: [Dish] = []
+    var specials: [Dish] = []
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Yum Yum"
         registerNibs()
-        
+        ProgressHUD.show()
+        NetworkService.shared.fetchAllCategories {[weak self] result in
+            switch result{
+            case .success(let allDishes):
+                print("success")
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.populers = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                self?.categoryCollectionView.reloadData()
+                self?.populerCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     //MARK: - functions
     private func registerNibs(){

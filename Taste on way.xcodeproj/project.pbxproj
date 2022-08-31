@@ -35,6 +35,12 @@
 		EA99960228BD8B7800916FAB /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99960128BD8B7800916FAB /* DishCategory.swift */; };
 		EA99960428BD8CE300916FAB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99960328BD8CE300916FAB /* String+Extension.swift */; };
 		EA99960728BD914C00916FAB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99960628BD914C00916FAB /* CardView.swift */; };
+		EAEDBBDB28BF8E0500277665 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBDA28BF8E0500277665 /* NetworkService.swift */; };
+		EAEDBBDD28BF8F1000277665 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBDC28BF8F1000277665 /* Route.swift */; };
+		EAEDBBDF28BF8FBB00277665 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBDE28BF8FBB00277665 /* Method.swift */; };
+		EAEDBBE128BFC52A00277665 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBE028BFC52A00277665 /* AppError.swift */; };
+		EAEDBBE328BFD7D200277665 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBE228BFD7D200277665 /* ApiResponse.swift */; };
+		EAEDBBE528BFF91800277665 /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDBBE428BFF91800277665 /* AllDishes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +76,12 @@
 		EA99960128BD8B7800916FAB /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		EA99960328BD8CE300916FAB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		EA99960628BD914C00916FAB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		EAEDBBDA28BF8E0500277665 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		EAEDBBDC28BF8F1000277665 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		EAEDBBDE28BF8FBB00277665 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		EAEDBBE028BFC52A00277665 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		EAEDBBE228BFD7D200277665 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		EAEDBBE428BFF91800277665 /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,7 @@
 		EA2ABED728B835DF0077BB2A /* Taste on way */ = {
 			isa = PBXGroup;
 			children = (
+				EAEDBBD928BF8DEB00277665 /* Networking */,
 				EA5E363528B9267700F2D007 /* Extensions */,
 				EA5E363128B9242C00F2D007 /* CustomViews */,
 				EA5E363028B9242700F2D007 /* Models */,
@@ -147,6 +160,7 @@
 				EA99960128BD8B7800916FAB /* DishCategory.swift */,
 				EA64083F28BE391E00FE16AD /* Dish.swift */,
 				EA64085B28BE735C00FE16AD /* Order.swift */,
+				EAEDBBE428BFF91800277665 /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,9 +168,9 @@
 		EA5E363128B9242C00F2D007 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				EA64084B28BE5E8A00FE16AD /* TableViewCells */,
 				EA99960528BD913700916FAB /* CardView */,
 				EA9995FB28BD89DB00916FAB /* CollectionViewCell */,
+				EA64084B28BE5E8A00FE16AD /* TableViewCells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -272,6 +286,18 @@
 				EA99960628BD914C00916FAB /* CardView.swift */,
 			);
 			path = CardView;
+			sourceTree = "<group>";
+		};
+		EAEDBBD928BF8DEB00277665 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EAEDBBDA28BF8E0500277665 /* NetworkService.swift */,
+				EAEDBBDC28BF8F1000277665 /* Route.swift */,
+				EAEDBBDE28BF8FBB00277665 /* Method.swift */,
+				EAEDBBE028BFC52A00277665 /* AppError.swift */,
+				EAEDBBE228BFD7D200277665 /* ApiResponse.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		EFD00645CFD8AE1357A6EB2B /* Frameworks */ = {
@@ -408,16 +434,22 @@
 				EA64085628BE621E00FE16AD /* DishListViewController.swift in Sources */,
 				EA9995FF28BD8A0F00916FAB /* CategoryCollectionViewCell.swift in Sources */,
 				EA5E363928B9278300F2D007 /* OnboardingSlide.swift in Sources */,
+				EAEDBBE528BFF91800277665 /* AllDishes.swift in Sources */,
 				EA2ABED928B835DF0077BB2A /* AppDelegate.swift in Sources */,
+				EAEDBBDF28BF8FBB00277665 /* Method.swift in Sources */,
 				EA2ABEDB28B835DF0077BB2A /* SceneDelegate.swift in Sources */,
 				EA5E363728B926A400F2D007 /* UiView+Extension.swift in Sources */,
 				EA5E363428B9245D00F2D007 /* OnboardingViewController.swift in Sources */,
 				EA64084828BE54F200FE16AD /* DishDetailViewController.swift in Sources */,
+				EAEDBBE328BFD7D200277665 /* ApiResponse.swift in Sources */,
 				EA72108F28B957ED008899FE /* HomeViewController.swift in Sources */,
+				EAEDBBDD28BF8F1000277665 /* Route.swift in Sources */,
+				EAEDBBDB28BF8E0500277665 /* NetworkService.swift in Sources */,
 				EA99960228BD8B7800916FAB /* DishCategory.swift in Sources */,
 				EA64084428BE490B00FE16AD /* DishLandscapeCollectionViewCell.swift in Sources */,
 				EA99960428BD8CE300916FAB /* String+Extension.swift in Sources */,
 				EA99960728BD914C00916FAB /* CardView.swift in Sources */,
+				EAEDBBE128BFC52A00277665 /* AppError.swift in Sources */,
 				EA72108C28B92E05008899FE /* OnboardingCollectionViewCell.swift in Sources */,
 				EA64084028BE391E00FE16AD /* Dish.swift in Sources */,
 				EA64083D28BE378100FE16AD /* DishPortraitCollectionViewCell.swift in Sources */,

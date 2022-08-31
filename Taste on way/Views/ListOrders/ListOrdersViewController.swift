@@ -8,7 +8,7 @@
 import UIKit
 
 class ListOrdersViewController: UIViewController {
-
+    
     @IBOutlet weak var listOrdertableView: UITableView!
     var orders : [Order] = [
         Order(name: "khaled hussien", dish: Dish(id: "id1", name: "khaled", image: "https://bunzlcatering.co.uk/wp-content/uploads/2018/12/Vegetable-And-Chickpea-Tagine.jpg", description: "this is populer dish in africa ", calories: 30), id: "id1"),
@@ -17,9 +17,8 @@ class ListOrdersViewController: UIViewController {
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Orders"
         registerCells()
-        
-
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .black
@@ -27,10 +26,6 @@ class ListOrdersViewController: UIViewController {
     func registerCells(){
         listOrdertableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
     }
-    
-    
-
-    
 }
 extension ListOrdersViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,9 +43,6 @@ extension ListOrdersViewController: UITableViewDelegate , UITableViewDataSource{
         controller.dish = orders[indexPath.row].dish
         navigationController?.pushViewController(controller, animated: true)
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 90
-//    }
     
     
     
